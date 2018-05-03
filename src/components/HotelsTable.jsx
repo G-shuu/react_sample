@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import HotelRow from './HotelRow'
+import HotelRow from './HotelRow';
 
 const HotelsTable = ({ hotels }) => (
   <table>
