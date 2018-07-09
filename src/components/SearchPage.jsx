@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
+import _ from 'lodash';
 
-import SearchPage from './SearchPage';
+import SearchForm from './SearchForm';
+import GeocodeResult from './GeocodeResult';
+import Map from './Map';
+import HotelsTable from './HotelsTable';
 
-const App extends Component {
+import { geocode } from '../domain/Geocoder';
+import { searchHotelByLocation } from '../domain/HotelRepository';
+
+const sortedHotels = (hotels, sortKey) => _.sortBy(hotels, h => h[sortKey]);
+
+class SearchPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -59,7 +68,7 @@ const App extends Component {
 
   render() {
     return (
-      <div className="app">
+      <div className="search-page">
         <h1 className="app-title">ホテル検索</h1>
         <SearchForm onSubmit={place => this.handlePlaceSubmit(place)} />
         <div className="result-area">
@@ -82,4 +91,4 @@ const App extends Component {
   }
 }
 
-export default App;
+export default SearchPage;
