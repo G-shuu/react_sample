@@ -2,12 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const HotelsClickableTh = ({
-  label, sortKey, isSelected, onSort
+  label, sortKey, isSelected, onSort,
 }) => (
   <th
     className="hotels-clickable-th"
-    onClick={() => onSort(sortKey
-  )};
+    onClick={() => onSort(sortKey)}
   >{label}{isSelected ? '▲' : ''}
   </th>
 );
